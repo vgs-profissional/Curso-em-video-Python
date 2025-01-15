@@ -1,12 +1,13 @@
-num = int(input('Digite um número: '))
-contador = num
-fatorial = num
-while contador <= num:
-    if num > 1:
-        print(contador,(contador - 1), fatorial)
-        contador -= 1
-        fatorial = fatorial * contador
-    elif num == 0 or num == 1:
-        print(1)
-        contador = num + 1
-        
+num = int(input('Digite um número pra calcular o fatorial '))
+n = num
+print('{}! -> '.format(num), end=' ')
+while n > 0:
+    if n > 1:
+        num = num * (n - 1)
+        print('{}'.format(n),end=' ')
+        print('x', end=' ')
+    else:
+        print('{}'.format(n),end=' ')
+        print('= {}'.format(num),end=' ')
+    n = n - 1
+
