@@ -1,25 +1,17 @@
-n = 0
-menor = 0
-maior = 0
-primeiro = 1
-media = 0
-quantidade = 0
-conta = 0
-while n < 1:
+menor = maior = quantidade = media = 0
+continuar = 's'
+
+while continuar in 'Ss':
     pergunta = float(input('Digite um número: '))
     quantidade += 1
     media += pergunta
-    media = media / quantidade
-    if primeiro == 1:
+    media /= quantidade
+    if quantidade == 1:
         maior = menor = pergunta
-        primeiro -= 1
     elif pergunta > maior:
         maior = pergunta
     elif pergunta < menor:
         menor = pergunta
     continuar = str(input('Deseja continuar? [s/n] ')).strip().lower()
-    if continuar in 'Nn':
-        n += 1
-    elif continuar in 'Ss':
-        n = 0
-    print('Pergunta {}, Maior {}, Menor {}, Media {}, Quantidade {}'.format(pergunta, maior, menor, media, quantidade))
+print("""Você digitou {} números e a média foi {:.1f}
+O maior valor foi {:.0f} e o menor foi {:.0f}""".format(quantidade, media, maior, menor))
